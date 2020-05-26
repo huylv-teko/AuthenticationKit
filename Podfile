@@ -6,6 +6,14 @@ target 'AuthenticationKit' do
 
   # Pods for AuthenticationKit
 
+  #facebook
+  pod 'FacebookCore', '~> 0.9.0'
+  pod 'FacebookLogin', '~> 0.9.0'
+  pod 'FacebookShare', '~> 0.9.0'
+  
+  #google
+  pod 'GoogleSignIn', '~>5.0.2'
+
   target 'AuthenticationKitTests' do
     # Pods for testing
   end
