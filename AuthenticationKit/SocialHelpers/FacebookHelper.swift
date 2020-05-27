@@ -14,19 +14,19 @@ import SwiftyJSON
 
 typealias GetFacebookUserInfoHandler = (_ userInfo: FBUserInfo?) -> Void
 
-enum FacebookError {
+public enum FacebookError {
     case failed(msg: String)
     case cancelled
     case emptyToken
     case emptyProfile
 }
 
-protocol FacebookHelperDelegate: class {
+public protocol FacebookHelperDelegate: class {
     func loginFacebookSucceeded(userInfo: FBUserInfo)
     func loginFacebookFailed(error: FacebookError)
 }
 
-struct FBProfile {
+public struct FBProfile {
     let id: String
     let name: String
     let avatar: String
@@ -34,17 +34,20 @@ struct FBProfile {
     let email: String
 }
 
-struct FBUserInfo {
-    let token: String
+public struct FBUserInfo {
+    public let token: String
     let profile: FBProfile?
 }
 
-class FacebookHelper: NSObject {
+public typealias ApplicationDelegate = FBSDKCoreKit.ApplicationDelegate
+public typealias AppEvents = FBSDKCoreKit.AppEvents
+
+public class FacebookHelper: NSObject {
     
-    static let sharedInstance = FacebookHelper()
-    weak var delegate: FacebookHelperDelegate?
-    
-    func login(presentVC: UIViewController) {
+    public static let sharedInstance = FacebookHelper()
+    public weak var delegate: FacebookHelperDelegate?
+
+    public func login(presentVC: UIViewController) {
         let loginManager = LoginManager()
         loginManager.logIn(permissions: [.publicProfile, .email], viewController: presentVC) { [weak self] (loginResult) in
             switch loginResult {
@@ -62,7 +65,7 @@ class FacebookHelper: NSObject {
         }
     }
     
-    func getAccessToken() -> String? {
+    public func getAccessToken() -> String? {
         return AccessToken.current?.tokenString
     }
     
@@ -92,7 +95,7 @@ class FacebookHelper: NSObject {
         }
     }
     
-    func logout() {
+    public func logout() {
         let loginManager = LoginManager()
         loginManager.logOut()
     }

@@ -8,10 +8,10 @@
 
 import Foundation
 
-class FacebookAuthentication {
+public class FacebookAuthentication {
     var name = 22
 
-    public static func add(_ n: Int) -> Int{
+    public static func add1(_ n: Int) -> Int{
         return 1 + n
     }
 }

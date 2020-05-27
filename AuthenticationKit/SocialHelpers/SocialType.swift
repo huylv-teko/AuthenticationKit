@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum SocialType: String {
+public enum SocialType: String {
     case facebook
     case google
     case apple
     case phone
-    
-    var authorizer: String {
+
+    public var authorizer: String {
         switch self {
         case .facebook:
             return "facebook"
@@ -26,20 +26,7 @@ enum SocialType: String {
             return "phone"
         }
     }
-    
-    var appId: String {
-        switch self {
-        case  .apple:
-            return Configs.App.bundleId ?? ""
-        case .facebook:
-            return Configs.facebookAppId
-        case .google:
-            return Configs.googleSignInClientId
-        case .phone:
-            return ""
-        }
-    }
-    
+
     public static func initialize(type: String?) -> SocialType? {
         guard let type = type else { return nil }
         switch type {
