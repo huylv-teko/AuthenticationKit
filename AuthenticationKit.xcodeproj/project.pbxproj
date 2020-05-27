@@ -10,7 +10,6 @@
 		8B773BE9247CD403001D5EEA /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B773BDF247CD403001D5EEA /* AuthenticationKit.framework */; };
 		8B773BEE247CD403001D5EEA /* AuthenticationKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B773BED247CD403001D5EEA /* AuthenticationKitTests.swift */; };
 		8B773BF0247CD403001D5EEA /* AuthenticationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B773BE2247CD403001D5EEA /* AuthenticationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B773C21247CF349001D5EEA /* FacebookAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B773C20247CF349001D5EEA /* FacebookAuthentication.swift */; };
 		8B773C23247CF7BA001D5EEA /* AuthenticationKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8B773C22247CF7BA001D5EEA /* AuthenticationKit.podspec */; };
 		8B773C2A247D0FE7001D5EEA /* GoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B773C25247D0FE7001D5EEA /* GoogleHelper.swift */; };
 		8B773C2C247D0FE7001D5EEA /* FacebookHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B773C27247D0FE7001D5EEA /* FacebookHelper.swift */; };
@@ -40,7 +39,6 @@
 		8B773BE8247CD403001D5EEA /* AuthenticationKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B773BED247CD403001D5EEA /* AuthenticationKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationKitTests.swift; sourceTree = "<group>"; };
 		8B773BEF247CD403001D5EEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B773C20247CF349001D5EEA /* FacebookAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthentication.swift; sourceTree = "<group>"; };
 		8B773C22247CF7BA001D5EEA /* AuthenticationKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AuthenticationKit.podspec; sourceTree = SOURCE_ROOT; };
 		8B773C25247D0FE7001D5EEA /* GoogleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
 		8B773C27247D0FE7001D5EEA /* FacebookHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookHelper.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				8B773C22247CF7BA001D5EEA /* AuthenticationKit.podspec */,
 				8B773BE2247CD403001D5EEA /* AuthenticationKit.h */,
 				8B773BE3247CD403001D5EEA /* Info.plist */,
-				8B773C20247CF349001D5EEA /* FacebookAuthentication.swift */,
 			);
 			path = AuthenticationKit;
 			sourceTree = "<group>";
@@ -372,7 +369,6 @@
 				8B773C2E247D0FE7001D5EEA /* AppleLoginHelper.swift in Sources */,
 				8B773C2C247D0FE7001D5EEA /* FacebookHelper.swift in Sources */,
 				8B773C2A247D0FE7001D5EEA /* GoogleHelper.swift in Sources */,
-				8B773C21247CF349001D5EEA /* FacebookAuthentication.swift in Sources */,
 				8B773C32247D2472001D5EEA /* LoginUserDefault.swift in Sources */,
 				8B773C2D247D0FE7001D5EEA /* SocialType.swift in Sources */,
 			);

@@ -54,7 +54,7 @@ public class AppleLoginHelper: NSObject {
         if #available(iOS 13.0, *) {
             let appleIDProvider = ASAuthorizationAppleIDProvider()
             let appleID = LoginUserDefaultsManager.getStringInUserDefaults(KeyUserDefaults.appleUserID)
-            guard appleID != "" else {
+            guard !appleID.isEmpty else {
                 completion?(nil, nil)
                 return
             }
@@ -63,7 +63,7 @@ public class AppleLoginHelper: NSObject {
                 case .authorized:
                     let appleToken = LoginUserDefaultsManager.getStringInUserDefaults(KeyUserDefaults.appleToken)
                     let appleUsername = LoginUserDefaultsManager.getStringInUserDefaults(KeyUserDefaults.appleUsername)
-                    guard appleToken != "" else {
+                    guard !appleToken.isEmpty else {
                         fallthrough
                     }
                     completion?(appleToken, appleUsername)
