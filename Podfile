@@ -14,6 +14,9 @@ target 'AuthenticationKit' do
   #google
   pod 'GoogleSignIn', '~>5.0.2'
 
+  #json
+  pod 'SwiftyJSON', '~> 4.0'
+
   target 'AuthenticationKitTests' do
     # Pods for testing
   end

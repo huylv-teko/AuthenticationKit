@@ -40,12 +40,14 @@ PODS:
   - GTMSessionFetcher/Core (1.4.0)
   - GTMSessionFetcher/Full (1.4.0):
     - GTMSessionFetcher/Core (= 1.4.0)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - FacebookCore (~> 0.9.0)
   - FacebookLogin (~> 0.9.0)
   - FacebookShare (~> 0.9.0)
   - GoogleSignIn (~> 5.0.2)
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -59,6 +61,7 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
@@ -71,7 +74,8 @@ SPEC CHECKSUMS:
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: db03aaf47fb9db938f07530988162d786716beff
+PODFILE CHECKSUM: 642d4714f5c61de54d4226385e4b338f2783d1df
 
 COCOAPODS: 1.8.3

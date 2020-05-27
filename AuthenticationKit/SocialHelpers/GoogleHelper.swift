@@ -9,7 +9,7 @@
 import UIKit
 import GoogleSignIn
 
-protocol GoogleHelperDelegate: class {
+public protocol GoogleHelperDelegate: class {
     func loginGoogleSuccess(userInfo: GoogleUserInfo)
     func loginGoogleFailed(message: String)
 }
@@ -21,35 +21,36 @@ struct GoogleProfile {
     let email: String
 }
 
-struct GoogleUserInfo {
-    let token: String
+public struct GoogleUserInfo {
+    public let token: String
     let profile: GoogleProfile?
 }
 
+public typealias GoogleHelperGIDSignIn = GIDSignIn
 
-class GoogleHelper: NSObject {
-    weak var delegate: GoogleHelperDelegate?
-    static let sharedInstance = GoogleHelper()
+public class GoogleHelper: NSObject {
+    public weak var delegate: GoogleHelperDelegate?
+    public static let sharedInstance = GoogleHelper()
     static let kGoogleAccessToken = "KEY_GOOGLE_ACCESS_TOKEN"
     private let gSignIn = GIDSignIn.sharedInstance()
     
-    func login(presentVC: UIViewController) {
+    public func login(presentVC: UIViewController) {
         gSignIn?.delegate = self
         gSignIn?.presentingViewController = presentVC
         gSignIn?.signIn()
     }
     
-    func restorePreviousSignIn() {
+    public func restorePreviousSignIn() {
         if (gSignIn?.hasPreviousSignIn() == true) {
             gSignIn?.restorePreviousSignIn()
         }
     }
     
-    func logout() {
+    public func logout() {
         gSignIn?.signOut()
     }
     
-    func getAccessToken() -> String? {
+    public func getAccessToken() -> String? {
         return gSignIn?.currentUser?.authentication?.accessToken
     }
     
@@ -61,7 +62,7 @@ class GoogleHelper: NSObject {
 
 // MARK: - GIDSignInDelegate
 extension GoogleHelper: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
@@ -85,7 +86,7 @@ extension GoogleHelper: GIDSignInDelegate {
         }
         
         if let token = accessToken {
-            NSUserDefaultsManager.saveStringInUserDefaults(token, GoogleHelper.kGoogleAccessToken)
+            LoginUserDefaultsManager.saveStringInUserDefaults(token, GoogleHelper.kGoogleAccessToken)
             let profile = GoogleProfile(id: userId ?? "", name: fullName ?? "", avatar: avatar, email: email ?? "")
             let userInfo = GoogleUserInfo(token: token, profile: profile)
             delegate?.loginGoogleSuccess(userInfo: userInfo)
@@ -95,7 +96,7 @@ extension GoogleHelper: GIDSignInDelegate {
         
     }
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print("disconnect")
     }
 }
